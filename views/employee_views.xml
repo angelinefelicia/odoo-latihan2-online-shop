@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- os.employee tree view -->
+    <record id="os_employee_view_tree" model="ir.ui.view">
+        <field name="name">Employee</field>
+        <field name="model">os.employee</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="address"/>
+                <field name="contact"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- os.employee form view -->
+    <record id="os_employee_view_form" model="ir.ui.view">
+        <field name="name">Form Employee</field>
+        <field name="model">os.employee</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="address"/>
+                        <field name="contact"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- os.employee action window -->
+    <record id="os_employee_action" model="ir.actions.act_window">
+        <field name="name">List of Employees</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">os.employee</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="os_employee_menu_act" 
+        name="Employees" 
+        parent="os_partner_menu_categ" 
+        action="os_employee_action" 
+        sequence="20"/>
+</odoo>

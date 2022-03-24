@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_os_product,access.os.product,model_os_product,,1,1,1,1
+access_os_expedition,access.os.expedition,model_os_expedition,,1,1,1,1
+access_os_employee,access.os.employee,model_os_employee,,1,1,1,1
+access_os_customer,access.os.customer,model_os_customer,,1,1,1,1
+access_os_order,access.os.order,model_os_order,,1,1,1,1
+access_os_orderproduct,access.os.orderproduct,model_os_orderproduct,,1,1,1,1

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- os.expedition tree view -->
+    <record id="os_expedition_view_tree" model="ir.ui.view">
+        <field name="name">Expedition</field>
+        <field name="model">os.expedition</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="type"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- os.expedition form view -->
+    <record id="os_expedition_view_form" model="ir.ui.view">
+        <field name="name">Form Expedition</field>
+        <field name="model">os.expedition</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="type"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- os.expedition action window -->
+    <record id="os_expedition_action" model="ir.actions.act_window">
+        <field name="name">List of Expeditions</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">os.expedition</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="os_expedition_menu_act" 
+        name="Expeditions" 
+        parent="os_item_menu_categ" 
+        action="os_expedition_action" 
+        sequence="20"/>
+</odoo>
