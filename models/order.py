@@ -25,10 +25,10 @@ class Order(models.Model):
     customer = fields.Many2one(comodel_name='os.customer', 
                             string='Customer',
                             required=True)
-    address = fields.Char(string='Customer Address',
+    address = fields.Char(string="Customer's Address",
                             required=True,
                             compute='_compute_customer_detail')
-    contact = fields.Char(string='Customer Contact',
+    contact = fields.Char(string="Customer's Contact",
                             required=True,
                             compute='_compute_customer_detail')
     @api.depends('customer')
