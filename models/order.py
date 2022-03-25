@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from email.policy import default
 from odoo import api, fields, models
 
@@ -56,7 +57,25 @@ class Order(models.Model):
 
     by_employee = fields.Many2one(comodel_name='os.employee', string='by employee')
     
-    status = fields.Char(string='Status', default='In Progress')
+    status = fields.Selection([
+        ('in progress', 'In Progress'),
+        ('paid', 'Paid'),
+        ('sending', 'Sending..'),
+        ('arrive', 'Arrived'),
+        ('return', 'Returned')
+    ], string='Status', default='in progress')
+
+    def btn_paid(self):
+        self.status = 'paid'
+        
+    def btn_send(self):
+        self.status = 'sending'
+
+    def btn_arrived(self):
+        self.status = 'arrive'
+
+    def btn_returned(self):
+        self.status = 'return'
 
     notes = fields.Char(string='Notes')
     

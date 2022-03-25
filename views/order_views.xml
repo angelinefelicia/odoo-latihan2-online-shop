@@ -65,9 +65,20 @@
                         <field name="date_send"/>
                         <field name="no_resi"/>
                         <field name="by_employee"/>
-                        <field name="status"/>
+                        <field name="status" widget="statusbar" statusbar_visible=" " />
                         <field name="notes"/>
                     </group>
+                    <!-- <header>
+                        <button string="Send" name="btn_send" type="object" class="btn-primary" widget="statusbar"/>
+                        <button string="Arrived" name="btn_arrived" type="object" class="btn-success" states="sending" />
+                        <button string="Returned" name="btn_returned" type="object" class="btn-danger" states="sending" />
+                    </header> -->
+                    <header>
+                        <button name="btn_paid" type="object" string="PAID" class="btn-info" />
+                        <button name="btn_send" type="object" string="SEND" class="btn-primary" />
+                        <button name="btn_arrived" type="object" string="ARRIVED" class="btn-success" />
+                        <button name="btn_returned" type="object" string="RETURNED" class="btn-danger" />
+                    </header>
                 </sheet>
             </form>
         </field>
